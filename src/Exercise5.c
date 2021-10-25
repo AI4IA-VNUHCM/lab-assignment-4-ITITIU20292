@@ -6,7 +6,7 @@ Ex:
 ___________________________________________________________________________________
 | Input: 5(row) 4(col) 10 21 22 54 64 53 86 72 68 99 30 11 12 23 69 15 16 77 98 19 |
 | The converted 2D array will be like this:                                        |
-| 10 21 22 54                                                                      |
+| 10 21 22 54                                                                      |z
 | 64 53 86 72                                                                      |
 | 68 99 30 11                                                                      |
 | 12 23 69 15                                                                      |
@@ -37,9 +37,26 @@ void Ex5(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
+	int arrmin[SIZE];
+		int count=0;
+		int max=0;
+    for(int i =0; i<m;i++){
+		int min=a[i][0];
+		for(int j=1;j<m;j++){
+			if (a[i][j]<min)
+			min=a[i][j];
+		}
+	
+		arrmin[count++]=min;
+	}
 
+         
+	for(int i=0;i<count;i++){
+			if(max<arrmin[i])
+			    max=arrmin[i];
+			printf("%d",max);
 }
-
+}
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int row = atoi(argv[1]);
