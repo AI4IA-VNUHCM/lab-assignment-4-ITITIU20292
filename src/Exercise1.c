@@ -15,15 +15,31 @@ ______________________________________
 #include <stdlib.h>
 #include <math.h>
 
-void Ex1(int n){
+int Ex1(int k,int n){
 	//Your codes here
-    
+   
+	if(k==0 || k==n)
+	{
+		return 1;
+	}else
+	{
+		return Ex1(k-1,n-1)+Ex1(k,n-1);
+	}
 }
+
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int testcase = atoi(argv[1]);
-	
-	Ex1(testcase);
+	int i,k,n;
+	for(i=0;i<=testcase;i++)
+	{
+		for(k=0;k<=i;k++)
+		{
+			printf("%2d",Ex1(k,i));
+		}
+		printf("\n");
+	}
+
 	return 0;
 }
