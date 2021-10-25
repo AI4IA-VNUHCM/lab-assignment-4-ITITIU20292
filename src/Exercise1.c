@@ -31,12 +31,12 @@ int Ex1(int k,int n){
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int testcase = atoi(argv[1]);
-	int i,k,n;
+	int i,k;
 	for(i=0;i<=testcase;i++)
 	{
 		for(k=0;k<=i;k++)
 		{
-			printf("%2d",Ex1(k,i));
+			printf("%5d",Ex1(k,i));
 		}
 		printf("\n");
 	}
