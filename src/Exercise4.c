@@ -49,23 +49,37 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 
 void insertRow(int arr[], int a[SIZE][SIZE],int rowIndex, int m, int n){
 	//Your codes here
-	
+    for(int i=rowIndex;i>m;i--)
+	  for(int j=0;j<n;j++)
+	  a[i][j]=a[i-1][j];
+	  m++;
 }
+
 
 void removeRow(int a[SIZE][SIZE], int rowIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=rowIndex;i<m-1;i++) 
+		for( int j=0;j<n;j++)
+		a[i][j]=a[i+1][j];
+   m--;
 }
 
 void insertCol(int arr[], int a[SIZE][SIZE],int colIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=0;i<n;i++)
+	for (int j=colIndex;j>n;j--)
+	a[i][j]=a[i][j-1];
+	n++;
 }
 
 void removeCol(int a[SIZE][SIZE], int colIndex, int m, int n){
 	//Your codes here
-	
+	for(int i=0;i<colIndex;i++)
+      for(int j=n;j<m-1;j++)
+         a[i][j]=a[i][j+1];
+   n--;
 }
+
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
