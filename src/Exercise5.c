@@ -48,8 +48,8 @@ void Ex5(int arr[], int m, int n){
             if (max < a[i][j]) {
                 max = a[i][j];
             }
+			printf("%d",max);
         }
-		printf("%d",max);
 		}
 }
 	
